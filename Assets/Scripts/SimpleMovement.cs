@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using UnityEngine.InputSystem; 
 
 public class SimpleMovement : MonoBehaviour
 {
@@ -18,9 +19,11 @@ public class SimpleMovement : MonoBehaviour
     public List<GameObject> Towers = new List<GameObject>();
 
     public Transform endPoint;
+    InputAction interactAction;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        interactAction = InputSystem.actions.FindAction("Interact");
     }
     void Update()
     {
@@ -39,7 +42,7 @@ public class SimpleMovement : MonoBehaviour
 
     void BuildTower()
     {
-        if (isHittingBuildTile && Input.GetKeyDown(KeyCode.Space))
+        if (isHittingBuildTile && interactAction.IsPressed())
         {
             if (bt != null)
             {
