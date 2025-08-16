@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9023130457217920610}
   - component: {fileID: 2795766655025892284}
   m_Layer: 0
-  m_Name: default
+  m_Name: MagicCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3033667219593020291, guid: 40b1328eae54dfd4587ba2e670b6cd74, type: 3}
+  - {fileID: 2100000, guid: b65fb52be92bc2c45b119a05aba24da2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
