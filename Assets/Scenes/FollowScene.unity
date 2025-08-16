@@ -1024,6 +1024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemy: {fileID: 1111865835143263560, guid: d9ec32c68c0b74646b00bede8a16b368, type: 3}
+  target: {fileID: 713943677}
   timeSinceLastSpawn: 0
   spawnTimer: 2
 --- !u!1 &1873148146
