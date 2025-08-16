@@ -134,9 +134,10 @@ GameObject:
   - component: {fileID: 85917523}
   - component: {fileID: 85917522}
   - component: {fileID: 85917524}
+  - component: {fileID: 85917525}
   m_Layer: 0
   m_Name: FollowerEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,7 +228,7 @@ Transform:
   m_GameObject: {fileID: 85917517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.14032, y: 1.63, z: -0.92943}
+  m_LocalPosition: {x: -9.14032, y: 1.63, z: -9.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -295,6 +296,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &85917525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85917517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab6b8509b3d7c54ea97a389f2a586c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DumbEnemy
+  maxHP: 20
+  hp: 0
+  x: 0
 --- !u!1 &274206297
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,9 +893,10 @@ GameObject:
   - component: {fileID: 1172428789}
   - component: {fileID: 1172428788}
   - component: {fileID: 1172428787}
+  - component: {fileID: 1172428794}
   m_Layer: 0
   m_Name: FollowerEnemy (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1032,12 +1049,27 @@ Transform:
   m_GameObject: {fileID: 1172428786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.14032, y: 1.63, z: -0.92943}
+  m_LocalPosition: {x: -9.14032, y: 1.63, z: -9.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1172428794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172428786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab6b8509b3d7c54ea97a389f2a586c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DumbEnemy
+  maxHP: 20
+  hp: 0
+  x: 0
 --- !u!1 &1873148146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1117,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1955740606
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1591662069795318277, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.92248
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591662069795318277, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591662069795318277, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.00472
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591662069795318277, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591662069795318277, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591662069795318277, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591662069795318277, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591662069795318277, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591662069795318277, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591662069795318277, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061785076009168353, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
+      propertyPath: m_Name
+      value: CannonTurret
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
 --- !u!1 &2056665284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,9 +1189,10 @@ GameObject:
   - component: {fileID: 2056665287}
   - component: {fileID: 2056665286}
   - component: {fileID: 2056665285}
+  - component: {fileID: 2056665292}
   m_Layer: 0
   m_Name: FollowerEnemy (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1255,12 +1345,27 @@ Transform:
   m_GameObject: {fileID: 2056665284}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.14032, y: 1.63, z: -0.92943}
+  m_LocalPosition: {x: -9.14032, y: 1.63, z: -9.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2056665292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056665284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab6b8509b3d7c54ea97a389f2a586c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DumbEnemy
+  maxHP: 20
+  hp: 0
+  x: 0
 --- !u!1 &2098800063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,3 +1587,4 @@ SceneRoots:
   - {fileID: 85917521}
   - {fileID: 2056665291}
   - {fileID: 1172428793}
+  - {fileID: 1955740606}
