@@ -7,9 +7,13 @@ public class SimpleMovement : MonoBehaviour
 {
     public float speed = 5f;
     private Rigidbody rb;
+
     public LayerMask btLayer;
-    public bool isHittingBuildTile;
-    public BuildTile bt;
+    private bool isHittingBuildTile;
+    private BuildTile bt;
+
+    //Can Delete Later
+    public MeshRenderer mr;
 
     public List<GameObject> Towers = new List<GameObject>();
 
@@ -53,11 +57,13 @@ public class SimpleMovement : MonoBehaviour
             Debug.Log("Hit: " + hit.collider.name);
             isHittingBuildTile = true;
             bt = hit.collider.GetComponent<BuildTile>();
+            mr.material.color = Color.green;
         }
         else
         {
             isHittingBuildTile = false;
             bt = null;
+            mr.material.color = Color.red;
         }
     }
     void OnDrawGizmos()
