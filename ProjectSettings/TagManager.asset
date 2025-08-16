@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ore
   - Enemy
+  - Flame
   layers:
   - Default
   - TransparentFX

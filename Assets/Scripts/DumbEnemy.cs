@@ -29,6 +29,5 @@ public class DumbEnemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 }
