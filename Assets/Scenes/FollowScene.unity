@@ -1007,7 +1007,7 @@ Transform:
   m_GameObject: {fileID: 1482802302}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.30679, y: 0, z: 11.99937}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1032,6 +1032,7 @@ MonoBehaviour:
   spawnTimer: 15
   waveSizes: 0500000008000000140000003200000064000000f4010000
   currWave: 0
+  scales: {x: 1, y: 2}
 --- !u!1 &1873148146
 GameObject:
   m_ObjectHideFlags: 0

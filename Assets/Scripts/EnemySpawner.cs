@@ -11,6 +11,8 @@ public class EnemySpawner : MonoBehaviour
     public List<int> waveSizes;
     public int currWave;
 
+    public Vector2 scales;
+
     void Start()
     {
         currWave = 0;
@@ -23,14 +25,18 @@ public class EnemySpawner : MonoBehaviour
          {
             for (int i = 0; i < waveSizes[currWave]; i++)
             {
-
                 Vector2 SpawnPoint2d = Random.insideUnitCircle.normalized * spawnRadius;
                 Vector3 SpawnPoint = new Vector3(SpawnPoint2d.x, transform.position.y, SpawnPoint2d.y);
+
                 GameObject newEnemy = Instantiate(enemy, SpawnPoint, Quaternion.identity);
                 newEnemy.GetComponent<MoveTo>().goal = target.transform;
+
+                float newScale = Random.Range(scales.x, scales.y);
+                newEnemy.transform.localScale = new Vector3(newScale, newScale, newScale);
             }
             if (currWave < waveSizes.Count - 1){
                 currWave++;
+                scales += new Vector2(1, 5);
             }
             timeSinceLastSpawn = 0;
          }

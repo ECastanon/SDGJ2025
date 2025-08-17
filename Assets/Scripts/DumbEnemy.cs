@@ -5,7 +5,7 @@ public class DumbEnemy : MonoBehaviour
     public int maxHP;
     public int hp;
 
-    private void Start()
+    private void EnableEnemy()
     {
         hp = maxHP;
     }
