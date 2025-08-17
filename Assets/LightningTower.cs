@@ -121,46 +121,38 @@ public class LightningTower : MonoBehaviour
 
     void Laser()
     {
-        //Enables the Line Renderer
-        if (!lineRenderer.enabled)
-        {
-            lineRenderer.enabled = true;
-            //impactEffect.Play();
-            //impactLight.enabled = true;
-        }
-
         if (enemy)
         {
-            lineRenderer.SetPosition(1, firePoint.position + Vector3.up * 4);
+            lineRenderer.SetPosition(1, firePoint.position + Vector3.up * 3.75f);
             lineRenderer.SetPosition(0, enemy.transform.position);
         }
         else
         {
-            lineRenderer2.SetPosition(1, firePoint.position + Vector3.up * 4);
-            lineRenderer2.SetPosition(0, firePoint.position + Vector3.up * 4);
+            lineRenderer.SetPosition(1, firePoint.position + Vector3.up * 3.75f);
+            lineRenderer.SetPosition(0, firePoint.position + Vector3.up * 3.75f);
         }
 
 
-        if (enemy2)
+        if (enemy2 && enemy)
         {
             lineRenderer2.SetPosition(1, enemy.transform.position);
             lineRenderer2.SetPosition(0, enemy2.transform.position);
         }
         else
         {
-            lineRenderer2.SetPosition(1, firePoint.position + Vector3.up * 4);
-            lineRenderer2.SetPosition(0, firePoint.position + Vector3.up * 4);
+            lineRenderer2.SetPosition(1, firePoint.position + Vector3.up * 3.75f);
+            lineRenderer2.SetPosition(0, firePoint.position + Vector3.up * 3.75f);
         }
 
-        if (enemy3)
+        if (enemy3 && enemy2)
         {
             lineRenderer3.SetPosition(1, enemy2.transform.position);
             lineRenderer3.SetPosition(0, enemy3.transform.position);
         }
         else
         {
-            lineRenderer2.SetPosition(1, firePoint.position + Vector3.up * 4);
-            lineRenderer2.SetPosition(0, firePoint.position + Vector3.up * 4);
+            lineRenderer3.SetPosition(1, firePoint.position + Vector3.up * 3.75f);
+            lineRenderer3.SetPosition(0, firePoint.position + Vector3.up * 3.75f);
         }
 
         //Laser Effects
