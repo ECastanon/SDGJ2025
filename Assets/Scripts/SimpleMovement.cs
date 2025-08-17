@@ -7,6 +7,7 @@ public class SimpleMovement : MonoBehaviour
 {
     public float speed = 5f;
     private Rigidbody rb;
+    public Animator anim;
 
     public LayerMask btLayer;
     private bool isHittingBuildTile;
@@ -35,7 +36,17 @@ public class SimpleMovement : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
+        if(movement == Vector3.zero)
+        {
+            anim.SetBool("Walking", false);
+        }
+        else
+        {
+            anim.SetBool("Walking", true);
+        }
+
         movement = transform.TransformDirection(movement) * speed * Time.deltaTime;
         rb.MovePosition(rb.position + movement);
     }

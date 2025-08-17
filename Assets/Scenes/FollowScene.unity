@@ -425,7 +425,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 1933249486}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12b36529bd004d92be2888886453bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotatePlayer
-  player: {fileID: 0}
+  player: {fileID: 1933249486}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemy: {fileID: 1111865835143263560, guid: d9ec32c68c0b74646b00bede8a16b368, type: 3}
-  target: {fileID: 0}
+  target: {fileID: 1933249482}
   spawnRadius: 50
   timeSinceLastSpawn: 10
   spawnTimer: 15
@@ -1061,6 +1061,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1933249482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4197303480636223454, guid: c4658289a69a7459c92c586a6782ff3b, type: 3}
+  m_PrefabInstance: {fileID: 4304326988963740044}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1933249486 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6550052183994856456, guid: c4658289a69a7459c92c586a6782ff3b, type: 3}
+  m_PrefabInstance: {fileID: 4304326988963740044}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2575425472136121203 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1619397395029238758, guid: c4658289a69a7459c92c586a6782ff3b, type: 3}
