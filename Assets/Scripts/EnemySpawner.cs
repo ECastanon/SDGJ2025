@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
             }
             if (currWave < waveSizes.Count - 1){
                 currWave++;
-                scales += new Vector2(1, 5);
+                scales += new Vector2(0, 1);
             }
             timeSinceLastSpawn = 0;
          }

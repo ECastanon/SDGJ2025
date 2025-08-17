@@ -23,10 +23,16 @@ public class SparkTurret : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        RemoveNullEnemies();
         if (enemy == null)
-        {
+        {   
             FireAttack.gameObject.SetActive(false);
+            if(enemies.Count > 0)
+            {
+                enemy = enemies[0];
+                FireAttack.gameObject.SetActive(true);
+            }
         }
         if (enemy != null)
         {
@@ -41,27 +47,27 @@ public class SparkTurret : MonoBehaviour
         objectToRotate.LookAt(enemydir);
     }
 
+    void RemoveNullEnemies()
+    {
+        for (int i = enemies.Count - 1; i >= 0; i--)
+        {
+            if (enemies[i] == null)
+            {
+                enemies.RemoveAt(i);
+            }
+        }
+    }
+
     private void Attack()
     {
+
         if (attacktimer >= fireRate && enemies.Count > 0)
         {
             attacktimer = 0;
-            foreach (var e in enemies)
-            {
+            for (int i = enemies.Count - 1; i >= 0; i--)
+            {   
+                GameObject e = enemies[i];
                 e.GetComponent<DumbEnemy>().hp -= damage;
-                if(e.GetComponent<DumbEnemy>().hp <= 0 && enemies.Contains(e))
-                {
-                    enemies.Remove(e);
-                    if(enemies.Count > 0)
-                    {
-                        enemy = enemies[0];
-                        FireAttack.gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        enemy = null;
-                    }
-                }
             }
         }
         attacktimer += Time.deltaTime;
