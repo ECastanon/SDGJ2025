@@ -1066,12 +1066,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemy: {fileID: 1111865835143263560, guid: d9ec32c68c0b74646b00bede8a16b368, type: 3}
   target: {fileID: 713943677}
-  spawnRadius: 70
+  spawnRadius: 50
   timeSinceLastSpawn: 10
   spawnTimer: 15
   waveSizes: 0500000008000000140000003200000064000000f4010000
   currWave: 0
-  scales: {x: 0, y: 0}
+  scales: {x: 1, y: 1}
 --- !u!1001 &1536785699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1126,11 +1126,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3511972439907452238, guid: 39ec527dfcd534aa3a637487d9f68b6d, type: 3}
       propertyPath: ore2ToSpawn
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3511972439907452238, guid: 39ec527dfcd534aa3a637487d9f68b6d, type: 3}
       propertyPath: ore3ToSpawn
-      value: 20
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511972439907452238, guid: 39ec527dfcd534aa3a637487d9f68b6d, type: 3}
+      propertyPath: oreinnerRadius
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511972439907452238, guid: 39ec527dfcd534aa3a637487d9f68b6d, type: 3}
+      propertyPath: oreouterRadius
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511972439907452238, guid: 39ec527dfcd534aa3a637487d9f68b6d, type: 3}
+      propertyPath: ore2outerRadius
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511972439907452238, guid: 39ec527dfcd534aa3a637487d9f68b6d, type: 3}
+      propertyPath: ore3outerRadius
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8094898270514970196, guid: 39ec527dfcd534aa3a637487d9f68b6d, type: 3}
       propertyPath: m_Name
@@ -1240,6 +1256,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2389418434645948552, guid: c4658289a69a7459c92c586a6782ff3b, type: 3}
+      propertyPath: Towers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389418434645948552, guid: c4658289a69a7459c92c586a6782ff3b, type: 3}
+      propertyPath: 'Towers.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2648023015891856614, guid: b8fbf4af2d3e1ce47957c673b4b51ac0, type: 3}
     - target: {fileID: 2945698426036230064, guid: c4658289a69a7459c92c586a6782ff3b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.6
