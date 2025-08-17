@@ -100,7 +100,7 @@ public class SimpleMovement : MonoBehaviour
         Vector3 direction = endPoint.position - transform.position;
         if (Physics.Raycast(transform.position, direction.normalized, out hit, direction.magnitude, btLayer))
         {
-            Debug.Log("Hit: " + hit.collider.name);
+            //Debug.Log("Hit: " + hit.collider.name);
             isHittingBuildTile = true;
             bt = hit.collider.GetComponent<BuildTile>();
         }
