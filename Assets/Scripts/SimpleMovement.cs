@@ -20,10 +20,15 @@ public class SimpleMovement : MonoBehaviour
 
     public Transform endPoint;
     InputAction interactAction;
+    InputAction nextTower;
+    InputAction prevTower;
+    public int CurrrentTowerIndex = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         interactAction = InputSystem.actions.FindAction("Interact");
+        nextTower = InputSystem.actions.FindAction("Previous");
+        prevTower = InputSystem.actions.FindAction("Next");
     }
     void Update()
     {
@@ -42,11 +47,27 @@ public class SimpleMovement : MonoBehaviour
 
     void BuildTower()
     {
+        if (nextTower.WasPressedThisFrame())
+        {
+            CurrrentTowerIndex++;
+            if (CurrrentTowerIndex >= Towers.Count)
+            {
+                CurrrentTowerIndex = 0;
+            }
+        }
+        if (prevTower.WasPressedThisFrame())
+        {
+            CurrrentTowerIndex--;
+            if (CurrrentTowerIndex < 0)
+            {
+                CurrrentTowerIndex = Towers.Count - 1;
+            }
+        }
         if (isHittingBuildTile && interactAction.IsPressed())
         {
             if (bt != null)
             {
-                bt.SetTowerOnTile(Towers[0]);
+                bt.SetTowerOnTile(Towers[CurrrentTowerIndex]);
             }
         }
     }

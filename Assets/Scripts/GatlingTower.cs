@@ -47,13 +47,23 @@ public class GatlingTower : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other)
-    {
-        float distance = Vector3.Distance(transform.position, other.transform.position);
-        float distance_to_enemy = Vector3.Distance(transform.position, enemy.transform.position);
+    {   
         //Check if the collider of the other GameObject involved in the collision is tagged "Enemy"
-        if (other.tag == "Enemy" && (distance < distance_to_enemy)) // target closest
-        {
-            enemy = other.gameObject;
+        if (other.tag == "Enemy")
+        {   
+            if (enemy != null){ // target closest
+                float distance = Vector3.Distance(transform.position, other.transform.position);
+                float distance_to_enemy = Vector3.Distance(transform.position, enemy.transform.position);
+                if (distance < distance_to_enemy)
+                {
+                    enemy = other.gameObject;
+                }
+            }
+            else
+            {
+                enemy = other.gameObject;
+                
+            }
         }
     }
 }

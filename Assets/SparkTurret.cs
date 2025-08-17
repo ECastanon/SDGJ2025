@@ -37,7 +37,7 @@ public class SparkTurret : MonoBehaviour
 
     private void RotateTowardsEnemy()
     {
-        Vector3 enemydir = new Vector3(enemy.transform.position.x, objectToRotate.position.y, enemy.transform.position.z);
+        Vector3 enemydir = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z);
         objectToRotate.LookAt(enemydir);
     }
 
