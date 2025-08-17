@@ -36,7 +36,7 @@ public class ResourceSpawner : MonoBehaviour
             float radius = Random.Range(inner, outer);
             float x = Mathf.Cos(angle) * radius;
             float z = Mathf.Sin(angle) * radius;
-            Vector3 spawnPosition = new Vector3(x, 0, z);
+            Vector3 spawnPosition = new Vector3(x, 0.5f, z);
             Instantiate(resource, spawnPosition, Quaternion.identity);
         }
     }

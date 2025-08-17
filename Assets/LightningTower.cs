@@ -1,6 +1,6 @@
+using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class LightningTower : MonoBehaviour
 {
@@ -17,16 +17,17 @@ public class LightningTower : MonoBehaviour
     public GameObject enemy2;
     public GameObject enemy3;
 
-    [Header("Use Laser")]
     public LineRenderer lineRenderer;
     public LineRenderer lineRenderer2;
     public LineRenderer lineRenderer3;
+    public ParticleSystem ps1;
+    public ParticleSystem ps2;
+    public ParticleSystem ps3;
     //public ParticleSystem impactEffect;
     //public Light impactLight;
 
     void Start()
     {
-        GetComponent<SphereCollider>().radius = range;
         attacktimer = fireRate;
     }
 
@@ -53,8 +54,18 @@ public class LightningTower : MonoBehaviour
 
     private void FindEnemies()
     {
-        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(allEnemies.Length > 0)
+        List<GameObject> allEnemies = new List<GameObject>();
+        Collider[] hits = Physics.OverlapSphere(transform.position, range);
+        foreach (var hit in hits)
+        {
+            float dist = Vector3.Distance(transform.position, hit.transform.position);
+            if (hit.gameObject.tag.Contains("Enemy") && dist < range)
+            {
+                allEnemies.Add(hit.gameObject);
+            }
+        }
+
+        if (allEnemies.Count > 0)
         {
             enemy = allEnemies[0];
 
@@ -65,6 +76,8 @@ public class LightningTower : MonoBehaviour
                 if (distance < distance2)
                 {
                     enemy = e;
+                    ps1.transform.position = enemy.transform.position;
+                    ps1.Play();
                 }
             }
 
@@ -80,6 +93,8 @@ public class LightningTower : MonoBehaviour
                         if (distance > distance2)
                         {
                             enemy2 = hitCollider.gameObject;
+                            ps2.transform.position = enemy2.transform.position;
+                            ps2.Play();
                         }
                     }
                 }
@@ -97,6 +112,8 @@ public class LightningTower : MonoBehaviour
                         if (distance > distance2)
                         {
                             enemy3 = hitCollider.gameObject;
+                            ps3.transform.position = enemy3.transform.position;
+                            ps3.Play();
                         }
                     }
                 }
@@ -130,6 +147,7 @@ public class LightningTower : MonoBehaviour
         {
             lineRenderer.SetPosition(1, firePoint.position + Vector3.up * 3.75f);
             lineRenderer.SetPosition(0, firePoint.position + Vector3.up * 3.75f);
+            ps1.Stop();
         }
 
 
@@ -142,6 +160,7 @@ public class LightningTower : MonoBehaviour
         {
             lineRenderer2.SetPosition(1, firePoint.position + Vector3.up * 3.75f);
             lineRenderer2.SetPosition(0, firePoint.position + Vector3.up * 3.75f);
+            ps2.Stop();
         }
 
         if (enemy3 && enemy2)
@@ -153,6 +172,7 @@ public class LightningTower : MonoBehaviour
         {
             lineRenderer3.SetPosition(1, firePoint.position + Vector3.up * 3.75f);
             lineRenderer3.SetPosition(0, firePoint.position + Vector3.up * 3.75f);
+            ps3.Stop();
         }
 
         //Laser Effects
