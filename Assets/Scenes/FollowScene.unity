@@ -423,6 +423,7 @@ MonoBehaviour:
   - {fileID: 3061785076009168353, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
   - {fileID: 7101758235148814142, guid: a9cf85122b661a54e9ad08c13bf3de5e, type: 3}
   endPoint: {fileID: 2098800064}
+  CurrrentTowerIndex: 0
 --- !u!54 &713943683
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1026,8 +1027,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemy: {fileID: 1111865835143263560, guid: d9ec32c68c0b74646b00bede8a16b368, type: 3}
   target: {fileID: 713943677}
-  timeSinceLastSpawn: 0
-  spawnTimer: 2
+  spawnRadius: 50
+  timeSinceLastSpawn: 10
+  spawnTimer: 15
+  waveSizes: 0500000008000000140000003200000064000000f4010000
+  currWave: 0
 --- !u!1 &1873148146
 GameObject:
   m_ObjectHideFlags: 0

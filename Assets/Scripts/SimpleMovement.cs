@@ -63,7 +63,7 @@ public class SimpleMovement : MonoBehaviour
                 CurrrentTowerIndex = Towers.Count - 1;
             }
         }
-        if (isHittingBuildTile && interactAction.IsPressed())
+        if (isHittingBuildTile && interactAction.WasPressedThisFrame())
         {
             if (bt != null)
             {

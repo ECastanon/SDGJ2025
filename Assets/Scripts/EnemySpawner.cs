@@ -1,15 +1,19 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemy;
     public GameObject target;
+    public float spawnRadius;
     public float timeSinceLastSpawn;
     public float spawnTimer;
+    public List<int> waveSizes;
+    public int currWave;
 
     void Start()
     {
-        timeSinceLastSpawn = 0;
+        currWave = 0;
     }
 
     void Update()
@@ -17,9 +21,18 @@ public class EnemySpawner : MonoBehaviour
          timeSinceLastSpawn += Time.deltaTime;
          if (timeSinceLastSpawn >= spawnTimer)
          {
-             GameObject newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
-             newEnemy.GetComponent<MoveTo>().goal = target.transform;
-             timeSinceLastSpawn = 0;
+            for (int i = 0; i < waveSizes[currWave]; i++)
+            {
+
+                Vector2 SpawnPoint2d = Random.insideUnitCircle.normalized * spawnRadius;
+                Vector3 SpawnPoint = new Vector3(SpawnPoint2d.x, transform.position.y, SpawnPoint2d.y);
+                GameObject newEnemy = Instantiate(enemy, SpawnPoint, Quaternion.identity);
+                newEnemy.GetComponent<MoveTo>().goal = target.transform;
+            }
+            if (currWave < waveSizes.Count - 1){
+                currWave++;
+            }
+            timeSinceLastSpawn = 0;
          }
     }
 
