@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4811778697446923835}
   - component: {fileID: 6616093327576366126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ore3
   m_TagString: Ore
   m_Icon: {fileID: 0}
