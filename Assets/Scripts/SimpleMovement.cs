@@ -1,6 +1,5 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using System.Net;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem; 
 
@@ -13,22 +12,18 @@ public class SimpleMovement : MonoBehaviour
     private bool isHittingBuildTile;
     private BuildTile bt;
 
-    //Can Delete Later
-    public MeshRenderer mr;
-
     public List<GameObject> Towers = new List<GameObject>();
 
     public Transform endPoint;
-    InputAction interactAction;
-    InputAction nextTower;
-    InputAction prevTower;
+
+    public CartMagnet cm;
+    public List<Recipe> Recipes = new List<Recipe>();
+
+    //0 = Gatling, 1 = Cannon, 2 = Fire, 3 = Lightning
     public int CurrrentTowerIndex = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        interactAction = InputSystem.actions.FindAction("Interact");
-        nextTower = InputSystem.actions.FindAction("Previous");
-        prevTower = InputSystem.actions.FindAction("Next");
     }
     void Update()
     {
@@ -47,29 +42,56 @@ public class SimpleMovement : MonoBehaviour
 
     void BuildTower()
     {
-        if (nextTower.WasPressedThisFrame())
+        if (Input.GetKeyDown("1"))
         {
-            CurrrentTowerIndex++;
-            if (CurrrentTowerIndex >= Towers.Count)
-            {
-                CurrrentTowerIndex = 0;
-            }
+            CurrrentTowerIndex = 0;
+            Debug.Log("GATLING SELECTED");
         }
-        if (prevTower.WasPressedThisFrame())
+        if (Input.GetKeyDown("2"))
         {
-            CurrrentTowerIndex--;
-            if (CurrrentTowerIndex < 0)
-            {
-                CurrrentTowerIndex = Towers.Count - 1;
-            }
+            CurrrentTowerIndex = 1;
+            Debug.Log("CANNON SELECTED");
         }
-        if (isHittingBuildTile && interactAction.WasPressedThisFrame())
+        if (Input.GetKeyDown("3"))
         {
-            if (bt != null)
+            CurrrentTowerIndex = 2;
+            Debug.Log("FIRE SELECTED");
+        }
+        if (Input.GetKeyDown("4"))
+        {
+            CurrrentTowerIndex = 3;
+            Debug.Log("LIGHTNING SELECTED");
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (IfCanAfford())
             {
                 bt.SetTowerOnTile(Towers[CurrrentTowerIndex]);
             }
         }
+    }
+
+    private bool IfCanAfford()
+    {
+        if (cm.oreCounts[0] >= Recipes[CurrrentTowerIndex].coal &&
+            cm.oreCounts[1] >= Recipes[CurrrentTowerIndex].steel &&
+            cm.oreCounts[2] >= Recipes[CurrrentTowerIndex].diamond &&
+            cm.oreCounts[3] >= Recipes[CurrrentTowerIndex].gold)
+        {
+            //SubtractCost
+            cm.oreCounts[0] -= Recipes[CurrrentTowerIndex].coal;
+            cm.oreCounts[1] -= Recipes[CurrrentTowerIndex].steel;
+            cm.oreCounts[2] -= Recipes[CurrrentTowerIndex].diamond;
+            cm.oreCounts[3] -= Recipes[CurrrentTowerIndex].gold;
+
+            return true;
+        }
+        else
+        {
+            Debug.Log("YOU'RE TOO POOR");
+        }
+        return false;
     }
 
     public void PerformRaycast()
@@ -81,13 +103,11 @@ public class SimpleMovement : MonoBehaviour
             Debug.Log("Hit: " + hit.collider.name);
             isHittingBuildTile = true;
             bt = hit.collider.GetComponent<BuildTile>();
-            mr.material.color = Color.green;
         }
         else
         {
             isHittingBuildTile = false;
             bt = null;
-            mr.material.color = Color.red;
         }
     }
     void OnDrawGizmos()
@@ -95,4 +115,15 @@ public class SimpleMovement : MonoBehaviour
         Gizmos.color = isHittingBuildTile ? Color.green : Color.red;
         Gizmos.DrawLine(transform.position, endPoint.position);
     }
+
+
+}
+
+[System.Serializable]
+public class Recipe
+{
+    public int coal;
+    public int steel;
+    public int diamond;
+    public int gold;
 }

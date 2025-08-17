@@ -5,6 +5,8 @@ public class CartMagnet : MonoBehaviour
 {   
     public float gravityStrength = 10f;
     public List<GameObject> ores = new List<GameObject>();
+
+    //0 = Coal, 1 = Steel, 2 = Diamond, 3 = Gold
     public List<int> oreCounts = new List<int>();
     
     private void OnTriggerEnter (Collider col)

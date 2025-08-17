@@ -21,11 +21,18 @@ public class ResourceSpawner : MonoBehaviour
     public float ore3innerRadius;
     public float ore3outerRadius;
 
+    [Header("Ore Type 4")]
+    public GameObject ore4;
+    public int ore4ToSpawn;
+    public float ore4innerRadius;
+    public float ore4outerRadius;
+
     private void Start()
     {
         SpawnResource(ore, oreToSpawn, oreinnerRadius, oreouterRadius);
         SpawnResource(ore2, ore2ToSpawn, ore2innerRadius, ore2outerRadius);
         SpawnResource(ore3, ore3ToSpawn, ore3innerRadius, ore3outerRadius);
+        SpawnResource(ore4, ore4ToSpawn, ore4innerRadius, ore4outerRadius);
     }
 
     private void SpawnResource(GameObject resource, int number, float inner, float outer)

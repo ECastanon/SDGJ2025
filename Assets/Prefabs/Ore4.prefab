@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6554303840856060711}
   - component: {fileID: 5604956745204725643}
   m_Layer: 0
-  m_Name: Ore3
+  m_Name: Ore4
   m_TagString: Ore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d473a06fd880348f093b529b64166af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  oreID: 2
+  oreID: 3
 --- !u!1 &2003637783514706166
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68c4973861f4fac48bad850dcff3aab9, type: 2}
+  - {fileID: 2100000, guid: 8dc5b1d3b56012749bf87b5573d208b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -343,7 +343,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68c4973861f4fac48bad850dcff3aab9, type: 2}
+  - {fileID: 2100000, guid: 8dc5b1d3b56012749bf87b5573d208b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -432,7 +432,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68c4973861f4fac48bad850dcff3aab9, type: 2}
+  - {fileID: 2100000, guid: 8dc5b1d3b56012749bf87b5573d208b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
