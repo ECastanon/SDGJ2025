@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   cannon: {fileID: 7165264757007428245, guid: d6225eecff0106d44af2d17ba6c667ee, type: 3}
-  range: 25
+  range: 30
   fireRate: 3
   firePoint: {fileID: 2636528133879829163}
   damage: 30

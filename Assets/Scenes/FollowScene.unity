@@ -419,10 +419,9 @@ MonoBehaviour:
     m_Bits: 64
   mr: {fileID: 2142578458}
   Towers:
+  - {fileID: 3061785076009168353, guid: 7709f86bef0d23240890a7bbf9aaf471, type: 3}
   - {fileID: 3061785076009168353, guid: a18eb63b19b563d4fb434fbaa7d5ea4a, type: 3}
   - {fileID: 7101758235148814142, guid: a9cf85122b661a54e9ad08c13bf3de5e, type: 3}
-  - {fileID: 3061785076009168353, guid: 7709f86bef0d23240890a7bbf9aaf471, type: 3}
-  - {fileID: 7101758235148814142, guid: 092020d0c7c3c4e86b9b0dfe65de2b27, type: 3}
   endPoint: {fileID: 2098800064}
 --- !u!54 &713943683
 Rigidbody:

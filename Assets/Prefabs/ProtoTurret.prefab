@@ -382,10 +382,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   bullet: {fileID: 7165264757007428245, guid: 1c6054109bd3c364ab88f2ee4cf77cb8, type: 3}
-  range: 5
-  fireRate: 0.1
+  range: 20
+  fireRate: 0.2
   firePoint: {fileID: 2228604281984532134}
-  damage: 3
+  damage: 2
   enemy: {fileID: 0}
   objectToRotate: {fileID: 7929998130045835913}
 --- !u!135 &7417072659571675566
@@ -407,7 +407,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 10
+  m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7397367440711596130
 GameObject:
