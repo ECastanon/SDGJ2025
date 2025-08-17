@@ -20,6 +20,9 @@ public class SimpleMovement : MonoBehaviour
 
     public Transform endPoint;
     InputAction interactAction;
+
+    public Animator anim;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -38,6 +41,15 @@ public class SimpleMovement : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
         movement = transform.TransformDirection(movement) * speed * Time.deltaTime;
         rb.MovePosition(rb.position + movement);
+
+        if(movement != Vector3.zero)
+        {
+            anim.SetBool("Walking", true);
+        }
+        else
+        {
+            anim.SetBool("Walking", false);
+        }
     }
 
     void BuildTower()
