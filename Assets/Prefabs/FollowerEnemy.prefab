@@ -37,6 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1818117284099064997}
+  - {fileID: 7522950003848371850}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8431107855194932529
@@ -108,14 +109,14 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.29992104, y: 0.60292923, z: 0.2770555}
+  m_Center: {x: -0.019299507, y: -0.27862984, z: -0.30522192}
 --- !u!195 &8871532611135508122
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -125,7 +126,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1111865835143263560}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.33
   m_Speed: 3.5
   m_Acceleration: 80
   avoidancePriority: 50
@@ -135,7 +136,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 0.5
+  m_BaseOffset: 0.58
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1023186259717556439
@@ -190,8 +191,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab6b8509b3d7c54ea97a389f2a586c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DumbEnemy
-  maxHP: 50
-  hp: 50
+  maxHP: 30
+  hp: 0
+--- !u!1 &8682319299706843828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7522950003848371850}
+  - component: {fileID: 5069294782473439703}
+  - component: {fileID: 231366198271262986}
+  m_Layer: 0
+  m_Name: PhysicalColliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7522950003848371850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682319299706843828}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.49006712, y: 0, z: 0, w: 0.87168473}
+  m_LocalPosition: {x: 0, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8494031868003456008}
+  m_LocalEulerAnglesHint: {x: 58.69, y: 0, z: 0}
+--- !u!136 &5069294782473439703
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682319299706843828}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.16093037
+  m_Height: 1.1075841
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.019258438, z: -0.14459828}
+--- !u!135 &231366198271262986
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682319299706843828}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: -0.02, y: -0.32, z: 0.18}
 --- !u!1001 &2211823168627434318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255,6 +333,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6ef1ac6b3770b2744915638db5dff0a6, type: 3}
       propertyPath: m_Name
       value: skys
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6ef1ac6b3770b2744915638db5dff0a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1032,7 +1032,7 @@ MonoBehaviour:
   spawnTimer: 15
   waveSizes: 0500000008000000140000003200000064000000f4010000
   currWave: 0
-  scales: {x: 1, y: 2}
+  scales: {x: 0, y: 3}
 --- !u!1 &1873148146
 GameObject:
   m_ObjectHideFlags: 0

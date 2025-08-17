@@ -31,8 +31,13 @@ public class EnemySpawner : MonoBehaviour
                 GameObject newEnemy = Instantiate(enemy, SpawnPoint, Quaternion.identity);
                 newEnemy.GetComponent<MoveTo>().goal = target.transform;
 
+                //Set Enemy Scale
                 float newScale = Random.Range(scales.x, scales.y);
                 newEnemy.transform.localScale = new Vector3(newScale, newScale, newScale);
+
+                //Scale HP based on size
+                newEnemy.GetComponent<DumbEnemy>().maxHP += (int)newScale * 3;
+                newEnemy.GetComponent<DumbEnemy>().EnableEnemy();
             }
             if (currWave < waveSizes.Count - 1){
                 currWave++;
