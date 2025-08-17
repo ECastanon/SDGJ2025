@@ -7,6 +7,7 @@ public class Cannon : MonoBehaviour
 {
     public float speed;
     public int damage;
+    public float impactForce;
     public Transform target;
     private Vector3 vect;
     public ParticleSystem ps;
@@ -47,8 +48,11 @@ public class Cannon : MonoBehaviour
                 hitCollider.gameObject.GetComponent<DumbEnemy>().hp -= damage;
 
                 Rigidbody erb = hitCollider.gameObject.GetComponent<Rigidbody>();
+
+                Vector3 knockBackDirection = Random.onUnitSphere;
                 //erb.AddForce(erb.linearVelocity * -1, ForceMode.Impulse);
-                erb.AddForce(transform.up * 50000, ForceMode.Impulse);
+                erb.AddForce(knockBackDirection * impactForce, ForceMode.Impulse);
+                //erb.velocity = new Vector3(3, 10, 2);
             }
         }
         StartCoroutine(DestroySelf());

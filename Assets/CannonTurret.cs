@@ -9,7 +9,7 @@ public class CannonTurret : MonoBehaviour
     public Transform firePoint;
     public int damage;
 
-    public Transform enemy;
+    public GameObject enemy;
 
     public Transform objectToRotate;
 
@@ -35,7 +35,7 @@ public class CannonTurret : MonoBehaviour
         {
             attacktimer = 0;
             GameObject proj = Instantiate(cannon, firePoint.position, Quaternion.identity);
-            proj.GetComponent<Cannon>().InitializeCannon(damage, enemy);
+            proj.GetComponent<Cannon>().InitializeCannon(damage, enemy.transform);
         }
         attacktimer += Time.deltaTime;
     }
@@ -46,12 +46,24 @@ public class CannonTurret : MonoBehaviour
         objectToRotate.LookAt(enemydir);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
+    private void OnTriggerStay(Collider other)
+    {   
         //Check if the collider of the other GameObject involved in the collision is tagged "Enemy"
         if (other.tag == "Enemy")
-        {
-            enemy = other.gameObject.transform;
+        {   
+            if (enemy != null){ // target closest
+                float distance = Vector3.Distance(transform.position, other.transform.position);
+                float distance_to_enemy = Vector3.Distance(transform.position, enemy.transform.position);
+                if (distance < distance_to_enemy)
+                {
+                    enemy = other.gameObject;
+                }
+            }
+            else
+            {
+                enemy = other.gameObject;
+                
+            }
         }
     }
 }
