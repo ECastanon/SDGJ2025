@@ -36,4 +36,10 @@ public class EnemySpawner : MonoBehaviour
          }
     }
 
+    private void OnDrawGizmos()
+    {
+        // Draw wire sphere outline
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, spawnRadius);
+    }
 }
