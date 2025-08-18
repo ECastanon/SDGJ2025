@@ -42,6 +42,10 @@ public class LoadMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
     public void QuitGame()
     {
         #if UNITY_EDITOR
