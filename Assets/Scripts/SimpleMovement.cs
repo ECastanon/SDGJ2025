@@ -22,6 +22,13 @@ public class SimpleMovement : MonoBehaviour
 
     //0 = Gatling, 1 = Cannon, 2 = Fire, 3 = Lightning
     public int CurrrentTowerIndex = 0;
+
+    public RectTransform highlightPanel;
+    public RectTransform gat;
+    public RectTransform can;
+    public RectTransform fire;
+    public RectTransform ligh;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -57,21 +64,25 @@ public class SimpleMovement : MonoBehaviour
         {
             CurrrentTowerIndex = 0;
             Debug.Log("GATLING SELECTED");
+            highlightPanel.position = gat.position;
         }
         if (Input.GetKeyDown("2"))
         {
             CurrrentTowerIndex = 1;
             Debug.Log("CANNON SELECTED");
+            highlightPanel.position = can.position;
         }
         if (Input.GetKeyDown("3"))
         {
             CurrrentTowerIndex = 2;
             Debug.Log("FIRE SELECTED");
+            highlightPanel.position = fire.position;
         }
         if (Input.GetKeyDown("4"))
         {
             CurrrentTowerIndex = 3;
             Debug.Log("LIGHTNING SELECTED");
+            highlightPanel.position = ligh.position;
         }
 
         if (Input.GetMouseButtonDown(0))
