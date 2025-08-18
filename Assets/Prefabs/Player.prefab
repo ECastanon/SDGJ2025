@@ -782,6 +782,11 @@ MonoBehaviour:
   gravityStrength: 10000
   ores: []
   oreCounts: 000000000000000000000000
+  oreTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &3085316679774417623
 GameObject:
   m_ObjectHideFlags: 0
