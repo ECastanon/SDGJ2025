@@ -726,13 +726,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  anim: {fileID: 0}
   btLayer:
     serializedVersion: 2
     m_Bits: 64
-  mr: {fileID: 2142578458}
   Towers:
   - {fileID: 7101758235148814142, guid: a9cf85122b661a54e9ad08c13bf3de5e, type: 3}
   endPoint: {fileID: 2098800064}
+  cm: {fileID: 0}
+  Recipes: []
   CurrrentTowerIndex: 0
 --- !u!54 &713943683
 Rigidbody:
@@ -2399,8 +2401,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildTile: {fileID: 7748348527825466186, guid: 09076955a546ab84cb3bd5a62a07c3ae, type: 3}
-  rows: 6
-  columns: 6
 --- !u!4 &1873148148
 Transform:
   m_ObjectHideFlags: 0

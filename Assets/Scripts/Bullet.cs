@@ -6,6 +6,9 @@ public class Bullet : MonoBehaviour
     public int damage;
     public GameObject target;
 
+    private float lifeTime = 0.75f;
+    private float timer;
+
     public void InitializeBullet(int turretDamage, GameObject turretTarget)
     {
         damage = turretDamage;
@@ -14,6 +17,12 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
+        if(timer > lifeTime)
+        {
+            Destroy(gameObject);
+        }
+        timer += Time.deltaTime;
+
         transform.position = Vector3.Slerp(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
