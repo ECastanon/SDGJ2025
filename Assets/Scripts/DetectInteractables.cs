@@ -6,7 +6,7 @@ public class DetectInteractables : MonoBehaviour
     {
         if (col.CompareTag("Ore"))
         {
-            Debug.Log("Collided with: " + col.name + "!");
+            //Debug.Log("Collided with: " + col.name + "!");
         }
     }
 }
