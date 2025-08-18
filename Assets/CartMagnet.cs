@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 
 public class CartMagnet : MonoBehaviour
 {   
@@ -8,7 +10,17 @@ public class CartMagnet : MonoBehaviour
 
     //0 = Coal, 1 = Steel, 2 = Diamond, 3 = Gold
     public List<int> oreCounts = new List<int>();
-    
+    public List<TextMeshProUGUI> oreTexts = new List<TextMeshProUGUI>();
+
+    private void Update(){
+        for (int i = 0; i < oreCounts.Count; i++)
+        {
+            oreTexts[i].text = oreCounts[i].ToString();
+            Debug.Log("Updating ore text for ore ID: " + i + " with count: " + oreCounts[i]);
+            Debug.Log(oreTexts[i].text);
+        }
+    }
+
     private void OnTriggerEnter (Collider col)
     {
         if (col.CompareTag("Ore"))
