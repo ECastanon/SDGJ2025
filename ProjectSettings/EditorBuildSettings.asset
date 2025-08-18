@@ -9,14 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: aed8ace4dda0f9249a63dc820d225a4e
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: c80f39c045c20a74d9b350c85d3ffa0b
-  - enabled: 1
-    path: Assets/Scenes/instructions screen.unity
-    guid: d3b15ace31d7d0d42affd4c5f41fc16c
-  - enabled: 1
-    path: Assets/Scenes/creadit scene.unity
-    guid: 69ff04aecf6332647a2214050e5cc409
+    path: Assets/Scenes/Pausing.unity
+    guid: c8f44bac6f701d241b2de66aef8f9051
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0
